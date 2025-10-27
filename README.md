@@ -1,5 +1,5 @@
 Welcome to your new dbt project!
-
+this is training project into my long way to skill
 ### Using the starter project
 
 Try running the following commands:
