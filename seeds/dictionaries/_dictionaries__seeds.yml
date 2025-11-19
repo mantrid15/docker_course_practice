@@ -1,0 +1,14 @@
+seeds:
+- name: city_region
+  description: Сопоставление городов и регионов
+  config:
+    column_types:
+      city: varchar(50)
+      region: varchar(50)
+      updated_up: timestamp
+    delimiter: ";"
+  columns:
+    - name: city
+      tests:
+        - not_null
+        - unique
