@@ -8,6 +8,11 @@ version: '1.0.0'
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt_course_practice'
 
+
+# Добавьте эти настройки для отключения лишнего вывода
+# quiet: true
+# send_anonymous_usage_stats: false
+# log_level: warn
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -34,3 +39,7 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+seeds:
+  dbt_course_practice: 
+    schema: seeds
