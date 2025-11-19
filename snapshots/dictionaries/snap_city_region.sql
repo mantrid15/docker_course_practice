@@ -7,7 +7,11 @@
 
        strategy='timestamp',
        updated_at='updated_at',
-       dbt_valid_to_current="'9999-01-01'::date"
+       hard_deletes='new_record',
+       dbt_valid_to_current="'9999-01-01'::date",
+       snapshot_meta_column_names={ 
+            "dbt_is_deleted": "dbt_is_deleted"},
+ 
    )
 }}
 
