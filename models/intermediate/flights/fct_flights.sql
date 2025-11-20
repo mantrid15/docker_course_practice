@@ -10,12 +10,12 @@ SELECT
     flight_no,
     scheduled_departure,
     scheduled_arrival,
-    {# departure_airport_id, #}
-    {# arrival_airport_id, #}
+    departure_airport,
+    arrival_airport,
     status,
-    {# aircraft_id, #}
+    aircraft_code,
     actual_departure,
     actual_arrival
-    {# load_date #}
+    
 
 from {{ ref('stg_flights__flights') }} 
