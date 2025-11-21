@@ -4,7 +4,8 @@
         incremental_strategy = 'merge',
         unique_key = ['book_ref'], 
         tags = ['bookings'],
-        merge_update_columns = ['total_amount']  
+        merge_update_columns = ['total_amount'],
+        on_schema_change = 'sync_all_columns'
     ) 
 }}
 
@@ -18,3 +19,4 @@ select
 Where 
     book_date > (select max(book_date) from {{ source('demo_src', 'bookings')}}) - interval '97 day'
 {% endif %}
+{# comment about another something #}
