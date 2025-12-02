@@ -2,13 +2,12 @@
   config(
     materialized = 'incremental',
     unique_key='flight_id',
-    incremental_strategy='delete+insert',
     )
 }} 
 {% set incremental_days = 3000 %} 
 SELECT 
     flight_id, 
-    flight_no, 
+    flight_no::varchar(10) as flight_no, 
     scheduled_departure, 
     scheduled_arrival, 
     departure_airport, 
@@ -16,7 +15,9 @@ SELECT
     status, 
     aircraft_code, 
     actual_departure, 
-    actual_arrival
+    actual_arrival, 
+    'Hi, Usha!' as new_col
+    
 FROM 
     {{ source('demo_src', 'flights') }}
 
